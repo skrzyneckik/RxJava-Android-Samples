@@ -39,5 +39,6 @@ public class MyApp extends MultiDexApplication {
     MyVolley.init(this);
 
     Timber.plant(new Timber.DebugTree());
+    Timber.plant(new BatchingDebugTree());
   }
 }

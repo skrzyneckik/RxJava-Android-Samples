@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.jakewharton.rxbinding2.view.RxView;
+import com.morihacky.android.rxjava.BatchingDebugTree;
 import com.morihacky.android.rxjava.R;
 import com.morihacky.android.rxjava.wiring.LogAdapter;
 
@@ -95,6 +96,7 @@ public class BufferDemoFragment extends BaseFragment {
             onClickEvent -> {
               Timber.d("--------- GOT A TAP");
               _log("GOT A TAP");
+              BatchingDebugTree.Companion.flush();
               return 1;
             })
         .buffer(2, TimeUnit.SECONDS)
